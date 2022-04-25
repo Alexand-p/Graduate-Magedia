@@ -13,4 +13,19 @@
         <plugin name="savchenko-layout-preprocessor"
                 type="Savchenko\OrderComments\Plugin\Checkout\LayoutProcessorPlugin" sortOrder="10"/>
     </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sales_order_grid_data_source"
+                      xsi:type="string">Savchenko\OrderComments\Plugin\Model\ResourceModel\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Savchenko\OrderComments\Plugin\Model\ResourceModel\Order\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Sales\Model\ResourceModel\Order</argument>
+        </arguments>
+    </type>
 </config>
+
